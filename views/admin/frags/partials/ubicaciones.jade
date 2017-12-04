@@ -1,0 +1,121 @@
+section.ubicaciones
+    .titulo
+        md-icon.icon location_on
+        h2 Centros de Acopio
+        md-button(ng-click="formularioUbicacion = !formularioUbicacion" md-colors="formularioUbicacion ? {background: 'red'} : {background: 'green'}")
+            md-icon(ng-if="!formularioUbicacion" ng-click="crearUbicacion()") add
+            md-icon(ng-if="formularioUbicacion" ng-click="crearUbicacion()") clear
+    md-card
+        .creacion(ng-if="formularioUbicacion")
+            place-autocomplete(ng-model="ubicacion")
+            md-list
+                md-list-item.md-2-line
+                    md-icon(md-colors="{color: 'green'}" ng-if="ubicacion.nombre") check_circle
+                    md-icon(md-colors="{color: 'pink'}" ng-if="!ubicacion.nombre") report 
+                    .md-list-item-text
+                        p   {{ubicacion.nombre}}
+                        strong Nombre
+                md-list-item.md-2-line
+                    md-icon(md-colors="{color: 'green'}" ng-if="ubicacion.latitude") check_circle
+                    md-icon(md-colors="{color: 'pink'}" ng-if="!ubicacion.latitude") report 
+                    .md-list-item-text
+                        p   {{ubicacion.latitude}}
+                        strong Latitud    
+                md-list-item.md-2-line
+                    md-icon(md-colors="{color: 'green'}" ng-if="ubicacion.longitude") check_circle
+                    md-icon(md-colors="{color: 'pink'}" ng-if="!ubicacion.longitude") report 
+                    .md-list-item-text
+                        p   {{ubicacion.longitude}}
+                        strong Longitude
+                md-list-item.md-2-line
+                    md-icon(md-colors="{color: 'green'}" ng-if="ubicacion.numero") check_circle
+                    md-icon(md-colors="{color: 'pink'}" ng-if="!ubicacion.numero") report 
+                    .md-list-item-text
+                        p   {{ubicacion.numero}}
+                        strong Numero
+                md-list-item.md-2-line
+                    md-icon(md-colors="{color: 'green'}" ng-if="ubicacion.calle") check_circle
+                    md-icon(md-colors="{color: 'pink'}" ng-if="!ubicacion.calle") report 
+                    .md-list-item-text
+                        p   {{ubicacion.calle}}
+                        strong Calle
+                md-list-item.md-2-line
+                    md-icon(md-colors="{color: 'green'}" ng-if="ubicacion.colonia") check_circle
+                    md-icon(md-colors="{color: 'pink'}" ng-if="!ubicacion.colonia") report 
+                    .md-list-item-text
+                        p   {{ubicacion.colonia}}
+                        strong Colonia
+                md-list-item.md-2-line
+                    md-icon(md-colors="{color: 'green'}" ng-if="ubicacion.estado") check_circle
+                    md-icon(md-colors="{color: 'pink'}" ng-if="!ubicacion.estado") report 
+                    .md-list-item-text
+                        p   {{ubicacion.estado}}
+                        strong Estado
+                md-list-item.md-2-line
+                    md-icon(md-colors="{color: 'green'}" ng-if="ubicacion.codigopostal") check_circle
+                    md-icon(md-colors="{color: 'pink'}" ng-if="!ubicacion.codigopostal") report 
+                    .md-list-item-text
+                        p   {{ubicacion.codigopostal}}
+                        strong Codigo postal
+                .md-padding(layout="row" flex)
+                    md-input-container(flex)
+                        label Horario de Apertura
+                        input(ng-model="ubicacion.apertura")
+                    md-input-container(flex)
+                        label Horario de Cierre
+                        input(ng-model="ubicacion.cierre")
+                    md-input-container(flex)
+                        label Inicio
+                        md-datepicker(ng-model="ubicacion.inicio")
+                    md-input-container(flex)
+                        label Fin
+                        md-datepicker(ng-model="ubicacion.fin")
+                md-button(ng-click="submitUbicacion(ubicacion, proyecto.id)" md-colors="{background: 'green'}")
+                    md-icon save
+    md-card
+        div(layout="column")
+            .mapa(style="height: 300px")
+                ui-gmap-google-map(center='{latitude: 19.1847524, longitude: -96.1550328}' zoom='11')
+                    ui-gmap-marker(coords="marker" idkey="$index" ng-repeat="marker in markers")
+            
+            md-table-container
+                table(md-table md-row-select multiple)
+                    thead(md-head)
+                        tr(md-row)
+                            th(md-column md-numeric md-order-by="cotizacion.createdAt")
+                                md-icon date_range
+                                strong Fecha
+                            th(md-column md-numeric) Nombre
+                            th(md-column md-numeric) Calle
+                            th(md-column md-numeric) Numero
+                            th(md-column md-numeric) Colonia
+                            th(md-column md-numeric) Estado
+                            th(md-column md-numeric) Codigo postal
+                            th(md-column md-numeric) Inicio
+                            th(md-column md-numeric) Fin
+                            th(md-column md-numeric) Apertura
+                            th(md-column md-numeric) Cierre
+                            th(md-column md-numeric) Latitud
+                            th(md-column md-numeric) Longitud
+                            th(md-column md-numeric) 
+                    tbody(md-body)
+                        tr(md-row md-select="dato" md-select-id="name" md-auto-select ng-repeat="ubicacion in ubicaciones")
+                            td(md-cell) {{ubicacion.createdAt | date:'medium' }}
+                            td(md-cell) {{ubicacion.nombre}}
+                            td(md-cell) {{ubicacion.calle}}
+                            td(md-cell) {{ubicacion.numero}}
+                            td(md-cell) {{ubicacion.colonia}}
+                            td(md-cell) {{ubicacion.estado}}
+                            td(md-cell) {{ubicacion.codigopostal}}
+                            td(md-cell) {{ubicacion.inicio | date:'medium'}}
+                            td(md-cell) {{ubicacion.fin | date:'medium'}}
+                            td(md-cell) {{ubicacion.apertura}}
+                            td(md-cell) {{ubicacion.cierre}}
+                            td(md-cell) {{ubicacion.latitude}}
+                            td(md-cell) {{ubicacion.longitude}}
+                            td(md-cell)
+                                md-button(md-colors="{background : 'red'}")
+                                    md-icon delete
+                            
+                md-table-pagination(md-page-select)
+        

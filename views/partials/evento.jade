@@ -1,0 +1,8 @@
+md-dialog.evento
+    .md-padding
+        h2 {{usuario.nombre}}
+        p Estas apunto de inscribirte en el evento "{{evento.nombre}}"
+    md-button.green(ng-click="unir()")
+        md-icon done
+    md-button.red(ng-click="close()")
+        md-icon clear

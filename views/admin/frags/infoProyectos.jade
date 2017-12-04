@@ -1,0 +1,24 @@
+.proyecto
+    div(layout="row")
+        .navegador(flex="10")
+            .navegador-container
+                md-card
+                    md-button(ui-sref="proyecto.info" ui-sref-active="active")
+                        md-icon info
+                    md-divider
+                    md-button(ui-sref="proyecto.eventos" ui-sref-active="active")
+                        md-icon date_range
+                    md-divider
+                    md-button(ui-sref="proyecto.ubicaciones" ui-sref-active="active")
+                        md-icon location_on
+                    md-divider
+                    md-button(ui-sref="proyecto.materiales" ui-sref-active="active")
+                        md-icon build
+                    md-divider
+                    md-button(ui-sref="proyecto.imagenes" ui-sref-active="active")
+                        md-icon photo
+                md-card
+                    md-button(md-colors="{background: 'red'}" ng-click="eliminarProyecto(id)")
+                        md-icon clear
+        div(flex="90" layout="column")
+            main(ui-view="main")

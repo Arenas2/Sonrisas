@@ -1,0 +1,17 @@
+.menu(layout="row")
+	.opciones(flex)
+		md-nav-bar(md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links")
+			//- md-nav-item(md-nav-sref="home" name="home") Home
+			md-nav-item(md-nav-sref="proyectos.vista1" name="proyectos" ui-sref-active="active") Proyectos
+			md-nav-item(md-nav-sref="nosotros" name="nosotros" ui-sref-active="active") Nosotros
+	.logo-container(ui-sref="home" layout="row" layout-align="center center" flex)
+		.logo
+			md-icon(md-svg-src="img/logo.svg")
+		h2 Cada niño una sonrisa
+	.profilebuttons(flex)
+		md-button.login(ng-if="!auth" ui-sref="loginyregistro") iniciar sesión
+		.auth(ng-if="auth === true" layout="row")
+			h2 Bienvenido {{usuario.nombre}}!
+			md-button.perfil( ui-sref="perfil" style="background-image:url({{usuario.fb_avatar}})")
+			md-button.logout(ng-click="logout();")
+				md-icon exit_to_app

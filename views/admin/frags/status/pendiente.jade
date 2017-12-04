@@ -1,0 +1,10 @@
+
+md-card(layout="column")
+    h1 Pendiente    
+    md-card-content(layout="column")
+        md-input-container(flex)
+            label Objetivos
+            input(ng-model="proyecto.pendiente.objetivos") 
+        md-input-container(flex)
+            label Tareas
+            input(ng-model="proyecto.pendiente.tareas")

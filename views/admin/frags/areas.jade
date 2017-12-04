@@ -1,0 +1,28 @@
+.areas(ng-init="Obtenerareas()")
+    md-card
+        md-card-content(layout="row")
+            md-autocomplete(
+            md-selected-item="ctrl.selectedArea" 
+            md-search-text-change="ctrl.BuscarAreaChange(ctrl.searchTextArea)" 
+            md-search-text="ctrl.searchTextArea" 
+            md-selected-item-change="ctrl.AreaSeleccionadoChange(item)" 
+            md-items="item in areas" 
+            md-item-text="item.nombre" 
+            md-min-length="0" 
+            placeholder="Nombre de la area" 
+            md-menu-class="autocomplete-custom-template"
+            flex)
+                md-item-template
+                    span {{item.nombre}}
+            md-button(md-colors="{background: 'green'}" ng-click="AreaDialog()")
+                md-icon add
+    md-card
+        md-toolbar
+            .md-toolbar-tools
+                h4 Lista de Areas
+        md-card-content
+            md-list
+                md-list-item.md-2-line(ng-repeat="area in areas | filter: ctrl.searchTextArea" ui-sref="area({idArea:area.id})")
+                    .md-list-item-text
+                        h1 {{area.nombre}} 
+                                         

@@ -1,0 +1,26 @@
+.proyectos(ng-init="obtenerProyecto()")
+    md-card
+        md-card-content(layout="row")
+            md-autocomplete(
+            md-selected-item="ctrl.selectedProyecto" 
+            md-search-text-change="ctrl.BuscarProyectoChange(ctrl.searchTextProyecto)" 
+            md-search-text="ctrl.searchTextProyecto" 
+            md-selected-item-change="ctrl.ProyectoSeleccionadoChange(item)" 
+            md-items="item in proyectos" 
+            md-item-text="item.nombre" 
+            md-min-length="0" 
+            placeholder="Nombre del proyecto" 
+            md-menu-class="autocomplete-custom-template"
+            flex)
+                md-item-template
+                    span {{item.nombre}}
+            md-button(md-colors="{background: 'green'}" ui-sref="paso1")
+                md-icon add
+    md-card
+        md-toolbar
+            .md-toolbar-tools
+                h4 Lista de Proyectos Actuales
+        md-list
+            md-list-item.md-2-line(ng-repeat="proyecto in proyectos | filter: ctrl.searchTextProyecto" ng-click="irProyecto(proyecto)")
+                .md-list-item-text
+                    p {{proyecto.nombre}}

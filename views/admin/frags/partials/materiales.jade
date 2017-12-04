@@ -1,0 +1,28 @@
+section.materiales
+    .titulo
+        md-icon.icon build
+        h2 Materiales
+        md-button(ng-click="formularioMaterial = !formularioMaterial" md-colors="formularioMaterial ? {background: 'red'} : {background: 'green'}")
+            md-icon(ng-if="!formularioMaterial" ng-click="crearMaterial()") add
+            md-icon(ng-if="formularioMaterial") clear
+    md-card
+        md-toolbar
+            .md-toolbar-tools
+                h4 Materiales
+        .creacion
+            form(ng-if="formularioMaterial" ng-submit="submitMaterial(material, proyecto.id)" layout="row")
+                md-input-container(flex)
+                    label Nombre
+                    input(ng-model="material.nombre")
+                md-input-container(flex)
+                    label Cantidad
+                    input(ng-model="material.cantidad")
+                md-button(type="submit" md-colors="{background : 'green'}" )
+                    md-icon save
+    md-card(layout="row")
+        md-list(flex)
+            md-list-item(ng-repeat="material in materiales" ng-click="seleccionar(material)")
+                .md-list-item-text
+                    h4 {{material.nombre}}
+                .md-secondary
+                    p {{material.cantidad}}

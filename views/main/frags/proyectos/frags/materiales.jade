@@ -1,0 +1,18 @@
+.materiales(ng-if="materiales.length > 0")
+	.title
+		md-icon build
+		.title-content
+			h2 Materiales
+			p Ayudanos donando algunos materiales para la realización de este proyecto.
+	md-list
+		md-progress-linear(md-mode="indeterminate" ng-if="!materiales" ng-disabled="materiales")
+		md-list-item(ng-repeat="material in materiales" ng-click="donarMateriales(material, ev)")
+			.cantidad {{material.cantidad}}
+			// | /{{material.recaudado}}
+			md-card(md-whiteframe="1").md-list-item.md-2-line
+				p {{material.nombre}}
+			.md-secondary
+				.usuario(layout="row")
+					img(ng-src="{{usuario.fb_avatar}}" ng-repeat="usuario in material.Usuario")
+			//- md-progress-linear(md-mode="determinate" value="{{(material.recaudado * 100) / material.cantidad }}" ng-if="(material.cantidad / material.recaudado) > 0")
+			//- .recaudado(style="width: {{material.nivel}}%")

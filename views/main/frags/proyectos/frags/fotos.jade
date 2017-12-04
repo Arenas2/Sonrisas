@@ -1,0 +1,9 @@
+.fotos
+	.title
+		md-icon photo
+		.title-content
+			h2 Fotos
+	md-progress-linear(md-mode="indeterminate" ng-if="!imagenes" ng-disabled="imagenes")
+	md-grid-list(md-cols="3" md-row-height="200px")
+		md-grid-tile(md-colspan="1" md-rowspan="1" ng-repeat="imagen in imagenes")
+			fotografia(id="{{imagen.id}}")

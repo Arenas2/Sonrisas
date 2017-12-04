@@ -1,0 +1,13 @@
+.programas(layout="row" layout-align="center center" ng-init="obtenerCampanas()")
+    .programas-container(flex="60")
+        md-card
+            md-card-content
+                h3 Nosotros
+                p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate officia odit, accusamus modi minus minima nemo et facilis eaque, optio nihil atque. Officia provident doloremque tempora, aspernatur ut, quae temporibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate officia odit, accusamus modi minus minima nemo et facilis eaque, optio nihil atque. Officia provident doloremque tempora, aspernatur ut, quae temporibus.
+            md-subheader
+                md-button(ui-sref="tyc") terminos y condiciones
+        md-grid-list(md-cols="5" md-row-height="20vh")
+            md-grid-tile(ng-repeat="campana in campanas" ui-sref="programa({campana:campana.id})")
+                img(ng-src="{{campana.logo}}" style="width: 100px; height: auto;")
+                md-grid-tile-footer
+                    h4 {{campana.nombre}}

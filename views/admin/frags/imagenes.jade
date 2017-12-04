@@ -1,0 +1,14 @@
+md-card()
+    md-toolbar
+        .md-toolbar-tools
+            h1 Agregar Imagenes
+    md-card-content(layout="row")
+        md-list(flex)
+            md-list-item(ng-repeat="imagen in imagenes")
+                .circle
+                    img(ng-src="data:image/png;base64, {{imagen.base64}}")
+        md-card-content(flex="50" ng-init="dropify()")
+            .md-padding
+                input.dropify(ng-model="foto.imagenes" base-sixty-four-input type="file" data-default-file="Imagen del producto" maxsize="5120" data-max-file-size="600K" accept="image/*" style="padding:0px;")
+                md-button(md-colors="{background: 'blue'}" type="submit" ng-click="addImagen(foto.imagenes)")
+                    md-icon(style=" transform: rotate(180deg);") save

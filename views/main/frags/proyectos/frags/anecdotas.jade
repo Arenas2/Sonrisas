@@ -1,0 +1,30 @@
+.anecdotas
+	.title
+		md-icon forum
+		.title-content
+			h2 Anecdotas
+	.anecdotas-content
+		md-list
+			md-list-item(ng-repeat="usuario in proyecto.Usuario")
+				md-list-item.md-2-line
+					img.md-avatar(ng-src="{{usuario.fb_avatar}}")
+					.md-list-item-text
+						p {{usuario.Anecdotas.contenido}}
+
+	md-card.comentarios
+		form(layout="column" ng-submit="crearAnecdota(contenido)")
+			.comentario(layout="row")
+				img.md-avatar(ng-src="{{usuario.fb_avatar}}")
+				md-input-container(flex)
+					label Escribir una anecdota
+					textarea(md-maxlength="200" rows="5" md-select-on-focus ng-model="contenido")
+			md-divider
+			div(layout="row" layout-align="space-between center")
+				div(layout="row")
+					md-button
+						md-icon insert_photo
+					md-button
+						md-icon videocam
+				div
+					md-button(type="submit")
+						md-icon send

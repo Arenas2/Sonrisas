@@ -1,0 +1,77 @@
+.vista1
+    .pendientes(ng-init="pedirPendientes()")
+        .titulo
+            md-icon(md-svg-icon="img/iconos/pendiente.svg")
+            h4 Proximos
+        div(layout="row")
+            md-button(ng-click="before(busquedaPendiente)")
+                md-icon navigate_before
+            md-card 
+                md-progress-linear(md-mode="indeterminate" ng-if="loadingPendientes" ng-disabled="!loadingPendientes")
+                md-grid-list(md-cols="5" md-row-height="20vh")
+                    md-grid-tile(md-colspan="1" md-rowspan="1" ng-repeat="proyecto in pendientes | filter: ctrl.searchTextProyecto" ng-click="irProyecto(1, proyecto)" ng-init="hover = false"  ng-mouseover="hover = true" ng-mouseleave="hover = false"  ng-class="hover ? 'conHover' : 'sinHover'")
+                        imagenproducto(id="{{proyecto.id}}")
+                        md-grid-tile-footer
+                            h4 {{proyecto.nombre}}
+            md-button(ng-click="next(busquedaPendiente)")
+                md-icon navigate_next
+                //- md-divider
+                //- .paginacion(layout="row" layout-align="space-between center")
+                //-     md-button(ng-click="before(busquedaPendiente)")
+                //-         md-icon navigate_before
+                //-     div(layout="row" layout-align="center center")
+                //-         span {{busquedaPendiente.offset + 1}}
+                //-     md-button(ng-click="next(busquedaPendiente)")
+                //-         md-icon navigate_next
+                
+    .progresos(ng-init="pedirProgresos()")
+        .titulo
+            md-icon(md-svg-icon="img/iconos/progreso.svg")
+            h4 En curso
+        div(layout="row")
+            md-button(ng-click="before(busquedaProgresos)")
+                md-icon navigate_before
+            md-card
+                md-progress-linear(md-mode="indeterminate" ng-if="loadingProgresos" ng-disabled="!loadingProgresos")
+                md-grid-list(md-cols="5" md-row-height="20vh")
+                    md-grid-tile(md-colspan="1" md-rowspan="1" ng-repeat="proyecto in progresos | filter: ctrl.searchTextProyecto" ng-click="irProyecto(2, proyecto)" ng-init="hover = false"  ng-mouseover="hover = true" ng-mouseleave="hover = false"  ng-class="hover ? 'conHover' : 'sinHover'")
+                        imagenproducto(id="{{proyecto.id}}")
+                        md-grid-tile-footer
+                            h4 {{proyecto.nombre}}
+            md-button(ng-click="next(busquedaProgresos)")
+                md-icon navigate_next
+                //- 
+                //- md-divider
+                //- .paginacion(layout="row" layout-align="space-between center")
+                //-     md-button(ng-click="before(busquedaProgresos)")
+                //-         md-icon navigate_before
+                //-     div(layout="row" layout-align="center center")
+                //-         span {{busquedaProgresos.offset}}
+                //-     md-button(ng-click="next(busquedaProgresos)")
+                //-         md-icon navigate_next
+            
+    
+    .terminados(ng-init="pedirTerminados()")
+        .titulo
+            md-icon(md-svg-icon="img/iconos/terminado.svg")
+            h4 Logrados
+        div(layout="row")
+            md-button(ng-click="before(busquedaTerminados)")
+                md-icon navigate_before
+            md-card
+                md-progress-linear(md-mode="indeterminate" ng-if="loadingTerminados" ng-disabled="!loadingTerminados")
+                md-grid-list(md-cols="5" md-row-height="20vh")
+                    md-grid-tile(md-colspan="1" md-rowspan="1" ng-repeat="proyecto in terminados | filter: ctrl.searchTextProyecto" ng-click="irProyecto(3, proyecto)" ng-init="hover = false"  ng-mouseover="hover = true" ng-mouseleave="hover = false"  ng-class="hover ? 'conHover' : 'sinHover'")
+                        imagenproducto(id="{{proyecto.id}}")
+                        md-grid-tile-footer
+                            h4 {{proyecto.nombre}}
+            md-button(ng-click="next(busquedaTerminados)")
+                md-icon navigate_next
+                //- 
+                //- md-divider
+                //- .paginacion(layout="row" layout-align="space-between center")
+                //-     md-button(ng-click="before(busquedaTerminados)")
+                //-         md-icon navigate_before
+                //-     div(layout="row" layout-align="center center")
+                //-         span {{busquedaTerminados.offset}}
+                //-     

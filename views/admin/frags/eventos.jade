@@ -1,0 +1,35 @@
+md-card
+    md-toolbar
+        .md-toolbar-tools
+            md-icon calendar
+            h1 Agregar un nuevo evento
+            span(flex)
+            md-button(ng-click="nuevoEvento()")
+                md-icon add
+    md-card-content
+            md-card-content
+                form(ng-if="formularioEvento" ng-submit="AgregarEvento(nuevoevento, proyecto.status_actual)" layout="row")
+                    md-input-container(flex)
+                        label Nombre
+                        input(ng-model="nuevoevento.nombre")
+                    md-input-container(flex)
+                        label Descripcion
+                        input(ng-model="nuevoevento.descripcion")
+                    md-input-container(flex)
+                        label Fecha de inicio
+                        md-datepicker(ng-model="nuevoevento.fecha")
+                    md-button(type="submit" md-colors="{background : 'green'}")
+                        md-icon save
+            md-list
+                md-list-item.md-2-line(ng-repeat="evento in eventos")
+                    .md-list-item-text
+                        h2 {{evento.nombre}}
+                        p {{evento.descripcion}}
+                    .md-secondary
+                        p {{evento.fecha}}
+                    
+                
+                    
+
+            
+            

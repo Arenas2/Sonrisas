@@ -1,0 +1,8 @@
+.slider
+	.slide(ng-repeat="image in images" ng-show="image.visible")
+		img(ng-src="{{image.src}}")
+	div(layout="row" layout-align="space-between center" layout-fill)
+		md-button(ng-click="prev()")
+			md-icon.material-icons keyboard_arrow_left
+		md-button(ng-click="next()")
+			md-icon.material-icons keyboard_arrow_right

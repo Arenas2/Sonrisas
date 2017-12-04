@@ -1,0 +1,52 @@
+{
+  "name": "ngCroppie",
+  "version": "1.0.3",
+  "homepage": "https://github.com/allenRoyston/ngCroppie",
+  "authors": [
+    "Allen Royston <allen.acr@gmail.com>",
+    "Orif N. Jr. <orif.zade@gmail.com>"
+  ],
+  "description": "An awesome image cropping and rotating module for AngularJS",
+  "main": [
+    "ng-croppie.js",
+    "ng-croppie.css"
+  ],
+  "dependencies": {
+    "croppie": "2.5.0"
+  },
+  "overrides": {
+    "croppie": {
+      "main": [
+        "croppie.js",
+        "croppie.css"
+      ]
+    }
+  },
+  "moduleType": [],
+  "keywords": [
+    "angular",
+    "croppie",
+    "cropping",
+    "crop",
+    "rotate",
+    "image"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "1.0.3",
+  "_resolution": {
+    "type": "version",
+    "tag": "1.0.3",
+    "commit": "49b055433b308466b483dfcfed614e6e643ac5e0"
+  },
+  "_source": "https://github.com/allenRoyston/ngCroppie.git",
+  "_target": "^1.0.3",
+  "_originalSource": "ngCroppie",
+  "_direct": true
+}

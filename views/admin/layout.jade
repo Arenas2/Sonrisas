@@ -1,0 +1,32 @@
+extends ../index
+
+block moreHead
+	script(type="text/javascript" src="js/admin/admin.states.js")
+	script(type="text/javascript" src="js/admin/admin.controller.js")
+	link(type="text/css" rel="stylesheet", href="stylus/admin.css")
+
+block content
+
+	.admin(ng-controller="adminCtrl as adminctrl")
+		md-toolbar(ng-init="sectionsMenu('admin')")
+			.md-toolbar-tools(layout="row" layout-align="space-around center")
+				md-button(ng-click="toggleLeft()")
+					md-icon menu
+				span(flex)
+				p Bienvenido Administrador
+				div(flex layout="row" layout-align="end center")
+					md-button(href="/")
+						md-icon.material-icons exit_to_app
+		div(layout="row" layout-align="center center")
+			md-sidenav.md-sidenav-left(md-component-id="left" md-whiteframe="4")
+				md-toolbar
+					.md-toolbar-tools
+						md-button(ng-click="toggleLeft()") cerrar
+				md-list
+					md-list-item(ui-sref="{{seccion.href}}" ng-click="toggleLeft()" ng-repeat="seccion in secciones")
+						md-icon {{seccion.icon}}
+						.md-list-item-text
+							h4 {{seccion.nombre}}
+							
+			div(flex="100" flex-md="100" flex-sm="100" flex-xs="100")
+				main.page(ui-view="main")

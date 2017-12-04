@@ -1,0 +1,101 @@
+html(ng-app="myapp")
+	head
+		title Cada niño una sonrisa
+		
+		
+		script.
+			(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+			new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+			j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+			'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+			})(window,document,'script','dataLayer','GTM-NS4L69Q');
+
+		//- Angular
+		script(type="text/javascript", src="bower_components/angular/angular.min.js")
+		script(type="text/javascript", src="bower_components/angular-animate/angular-animate.min.js")
+		script(type="text/javascript", src="bower_components/angular-aria/angular-aria.min.js")
+		script(type="text/javascript", src="bower_components/angular-messages/angular-messages.min.js")
+		script(type="text/javascript", src="bower_components/svg-assets-cache.js/svg-assets-cache.js")
+		script(type="text/javascript", src="bower_components/angular-material/angular-material.min.js")
+		script(type="text/javascript", src="bower_components/angular-ui-router/release/angular-ui-router.min.js")
+		
+		script(type="text/javascript", src="bower_components/angular-material-data-table/dist/md-data-table.min.js")
+				
+		script(type="text/javascript", src="bower_components/ngstorage/ngStorage.min.js")
+		
+		script(type="text/javascript" src="https://conektaapi.s3.amazonaws.com/v0.3.2/js/conekta.js")
+		
+		//- Jquery
+		script(type="text/javascript", src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js")
+		
+		// Axios
+		script(type="text/javascript", src="bower_components/axios/dist/axios.min.js")
+		
+		//Lodash
+		script(type="text/javascript", src="bower_components/lodash/dist/lodash.min.js")
+
+		//facebook 
+		script(type="text/javascript", src="//connect.facebook.net/en_US/sdk.js")
+
+		// google-maps
+		script(type="text/javascript", src='//maps.googleapis.com/maps/api/js?key=AIzaSyBMemut_EJ8vHuSf5SdmZ-R4wDBrUQWy6k&libraries=places')
+		
+		//- Google Analytics
+		script(type="text/javascript", src="bower_components/angulartics/dist/angulartics.min.js")
+		script(type="text/javascript", src="bower_components/angulartics/dist/angulartics-gtm.min.js")
+					
+		
+		script(type="text/javascript", src="bower_components/angular-google-maps/dist/angular-google-maps.min.js")
+		script(type="text/javascript", src="bower_components/angular-simple-logger/dist/angular-simple-logger.min.js")
+		
+		//- Angular material
+		script(type="text/javascript", src="bower_components/angular-material/angular-material.min.js")
+		
+		//- LazyLoad
+		script(type="text/javascript", src="bower_components/oclazyload/dist/ocLazyLoad.min.js")
+		
+		//- Dropify
+		script(type="text/javascript", src="bower_components/dropify/dist/js/dropify.min.js")
+		script(type="text/javascript", src="bower_components/angular-base64-upload/dist/angular-base64-upload.min.js")
+		
+		//- Croppie
+		script(type="text/javascript", src="bower_components/croppie/croppie.min.js")
+		script(type="text/javascript", src="bower_components/ngCroppie/ng-croppie.min.js")
+
+		//- tweenMax
+		script(type="text/javascript", src="bower_components/gsap/src/minified/TweenMax.min.js")
+		script(type="text/javascript", src="bower_components/gsap/src/minified/plugins/ColorPropsPlugin.min.js")
+		
+		//- Scrollmagic
+		script(type="text/javascript", src="bower_components/scrollmagic/scrollmagic/minified/ScrollMagic.min.js")
+		script(type="text/javascript", src="bower_components/scrollmagic/scrollmagic/minified/plugins/animation.gsap.min.js")
+		script(type="text/javascript", src="bower_components/scrollmagic/scrollmagic/minified/plugins/debug.addIndicators.min.js")
+
+		// Konva
+		script(type="text/javascript", src="bower_components/konva/konva.js")
+
+		//- local js
+		script(type="text/javascript", src="js/app.js")
+		script(type="text/javascript", src="js/auth.js")
+		script(type="text/javascript", src="js/controller.js")
+		script(type="text/javascript", src="js/modulos.js")
+		script(type="text/javascript", src="js/servicios.js")
+		script(type="text/javascript", src="js/componentes.js")
+
+		//- Css externos
+		link(type="text/css" rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.1.0/angular-material.min.css")
+		link(type="text/css" rel="stylesheet", href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.min.css")
+		link(type="text/css" rel="stylesheet", href="bower_components/dropify/dist/css/dropify.min.css")
+		link(type="text/css" rel="stylesheet", href="bower_components/croppie/croppie.css")
+		link(type="text/css" rel="stylesheet", href="bower_components/ngCroppie/ng-croppie.css")
+		
+		link(type="text/css" rel="stylesheet", href="bower_components/angular-material-data-table/dist/md-data-table.min.css")
+		//- Css locales
+
+		link(rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons")
+		
+		block moreHead
+			
+	body(ng-controller="Ctrl as ctrl")
+
+		block content

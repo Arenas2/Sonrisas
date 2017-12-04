@@ -1,0 +1,56 @@
+.proyectos(layout="row" layout-align="center center")
+    .proyectos-container(flex="90")
+        div(layout="row") 
+                md-autocomplete(
+                    
+                md-items="item in proyectos"
+                md-item-text="item.nombre"
+                
+                md-search-text="ctrl.searchTextProyecto"
+                md-search-text-change="ctrl.BuscarProyectoChange(ctrl.searchTextProyecto)" 
+                
+                md-selected-item="ctrl.selectedProyecto" 
+                md-selected-item-change="ctrl.ProyectoSeleccionadoChange(item)" 
+                
+                md-min-length="0" 
+                placeholder="Buscar por Nombre" 
+                md-menu-class="autocomplete-custom-template"
+                flex)
+                    md-item-template
+                        span {{item.nombre}}
+                .load(flex ng-if="loadingArea" layout="row" layout-align="center center")  
+                    md-progress-circular(md-mode="indeterminate" md-diameter="40px")
+                md-autocomplete(
+                ng-if="!loadingArea"
+                md-selected-item="ctrl.selectedArea" 
+                md-search-text-change="ctrl.BuscarAreaChange(ctrl.searchTextArea)" 
+                md-search-text="ctrl.searchTextArea" 
+                md-selected-item-change="ctrl.AreaSeleccionadoChange(item)" 
+                md-items="item in areas" 
+                md-item-text="item.nombre" 
+                md-min-length="0" 
+                placeholder="Seleccionar Area" 
+                md-menu-class="autocomplete-custom-template"
+                flex)
+                    md-item-template
+                        span {{item.nombre}}  
+                .load(flex ng-if="loadingPrograma" layout="row" layout-align="center center")  
+                    md-progress-circular(md-mode="indeterminate" md-diameter="40px")
+                md-autocomplete(
+                ng-if="!loadingPrograma"
+                md-selected-item="ctrl.selectedPrograma" 
+                md-search-text-change="ctrl.BuscarProgramaChange(ctrl.searchTextPrograma)" 
+                md-search-text="ctrl.searchTextPrograma" 
+                md-selected-item-change="ctrl.ProgramaSeleccionadoChange(item)" 
+                md-items="item in programas" 
+                md-item-text="item.nombre" 
+                md-min-length="0" 
+                placeholder="Seleccionar Programa" 
+                md-menu-class="autocomplete-custom-template"
+                flex)
+                    md-item-template
+                        span {{item.id}} | {{item.nombre}}  
+                //- md-button(md-colors="{background: 'amber'}" ng-click="cambiar(bandera)")
+                //-     md-icon {{bandera.icon}}
+        
+        main(ui-view="main")

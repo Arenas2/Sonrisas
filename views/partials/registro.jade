@@ -1,0 +1,16 @@
+md-dialog.registro
+    md-toolbar
+        .md-toolbar-tools
+            h4 Registro
+    form.md-padding(layout="column" ng-submit="registro(nuevousuario)")
+        md-input-container
+            label Correo
+            input(ng-model="nuevousuario.correo")
+        md-input-container
+            label Nombre
+            input(ng-model="nuevousuario.nombre")
+        md-input-container
+            label Contraseña
+            input(ng-model="nuevousuario.password")
+        md-button(type="submit")
+            md-icon send

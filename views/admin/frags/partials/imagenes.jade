@@ -1,0 +1,37 @@
+section.imagenes
+    .titulo
+        md-icon.icon photo
+        h2 Imagenes
+    md-card
+        md-grid-list(md-cols="4" md-row-height="200px")
+            md-grid-tile(md-colspan="2" md-rowspan="2")
+                .grid-content(layout="column")    
+                    form(ng-submit="crearImagen(imagen, proyecto)")
+                        .dropify-container(ng-init="Dropify()" flex ng-hide="inputImage")
+                            input.dropify(type="file" data-default-file="Imagen de la imagenes" ng-model="imagen.imagen" base-sixty-four-input maxsize="5120" data-max-file-size="1000K" accept="image/*" style="padding:0px;")
+                        .croppie-container(flex ng-show="inputImage")
+                            ng-croppie(src="inputImage"
+                                ng-model='imagen.imagen'
+                                update='onUpdate'
+                                boundry="{ w: 300, h: 300 }"
+                                 viewport="{w: 150, h: 100}"
+                                mousezoom="true" 
+                                zoom="true" 
+                                orientation="90"
+                                type="square") 
+                        div(layout="row")
+                            md-button(flex ng-click="modo('portada')"  md-colors="modalidad === 'portada' ? {background : 'green'} : {background : 'red'}")
+                                md-icon photo_library
+                                | Portada
+                            md-button(flex ng-click="modo('normal')" md-colors="modalidad === 'normal' ? {background : 'green'} : {background : 'red'}")
+                                md-icon photo
+                                | Normal
+                            md-button(flex md-colors="{background: 'green'}" type="submit")
+                                md-icon save
+            md-grid-tile(md-colspan="1" md-rowspan="1" style="background-image:url({{portada.imagen}})")
+                md-grid-tile-footer(layout-align="center center")
+                    h4 portada
+            md-grid-tile(md-colspan="1" md-rowspan="1" ng-repeat="imagen in imagenes" style="background-image:url({{imagen.imagen}})")
+                md-grid-tile-footer(layout-align="center center")
+                    md-button(ng-click="eliminarImagen($index, imagen.id)")
+                        md-icon clear

@@ -1,0 +1,14 @@
+md-dialog(style="width:50vw;").accion
+    .titulo(layout="column")
+        h4 Muchas Gracias {{usuario.nombre}}
+        p Estas apunto de hacer una gran contribución a la sociedad de Veracruz.
+    form(ng-submit="unir(cantidad)")
+        .md-padding(layout="row")
+            md-input-container(flex)
+                label Cantidad para Donar
+                input(ng-model="cantidad" ng-required)
+        .botones(layout="row")
+            md-button.green(flex type="submit")
+                md-icon done
+            md-button.red(flex ng-click="close()")
+                md-icon close

@@ -1,0 +1,20 @@
+extends ../index
+
+block moreHead
+	script(type="text/javascript" src="js/main/main.states.js")
+	script(type="text/javascript" src="js/main/main.controller.js")
+	link(type="text/css" rel="stylesheet", href="stylus/main.css")
+	script(type="text/javascript", src="js/tween.js")
+	script(type="text/javascript", src="js/konva.js")
+
+
+block content
+
+	div(ng-controller="mainCtrl as mainctrl")
+		header.md-whiteframe-4dp(layout="row" layout-align="center center" ng-hide="$state.is('loginyregistro')")
+			include ../partials/nav
+		.main(layout="row" layout-align="center center")
+			.centro(flex="100" flex-md="100" flex-sm="100" flex-xs="100")
+				main(ui-view="main" class="page" md-dynamic-height)
+		footer(layout="row" layout-align="end center")
+			include ../partials/footer

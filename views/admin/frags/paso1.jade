@@ -1,0 +1,31 @@
+section
+    form(ng-submit="submit(proyecto)")
+        md-card
+            md-card-content(layout="column")
+                h1 Información básica
+                md-input-container(flex)
+                    label Nombre del proyecto
+                    input(ng-model="proyecto.nombre")
+                md-input-container(flex)
+                    label Descripcion
+                    input(ng-model="proyecto.descripcion")
+            md-card-content(layout="row")
+                md-input-container(flex)
+                    label Areas
+                    md-select(ng-model="proyecto.Id_area")
+                        md-option(ng-value="area.id" ng-repeat="area in areas") {{area.nombre}}
+                md-input-container(flex)
+                    label Programas
+                    md-select(ng-model="proyecto.Id_campana")
+                        md-option(ng-value="campana.id" ng-repeat="campana in campanas") {{campana.nombre}}
+                md-input-container(flex)
+                    label Status
+                    md-select(ng-model="proyecto.status_actual" ng-change="cambiar(proyecto.status_actual)")
+                        md-option(ng-value="1") Pendiente
+                        md-option(ng-value="2") Progreso
+                        md-option(ng-value="3") Terminado
+
+        main.page(ui-view="main")
+        md-card
+            md-button(type="submit"  md-colors="{background: 'green'}")
+                md-icon send

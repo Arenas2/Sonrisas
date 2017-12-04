@@ -1,0 +1,8 @@
+md-card
+    h1 Nueva Area
+    md-card-content(layout="column")
+        md-input-container
+            label Nombre
+            input(ng-model="area.nombre")
+        md-button(type="submit" ng-click="nuevaArea()")
+            md-icon add

@@ -1,0 +1,59 @@
+section.info
+    .titulo
+        md-icon.icon info
+        h2  Información básica
+    md-card
+        md-subheader
+            div(style="display: flex")
+                p Este proyecto tiene el status: 
+                p(ng-bind="status(proyecto.status_actual)")
+        form(ng-submit="editar(proyecto)" layout="column")
+            .infobasica.md-padding(layout="column" flex)
+                div(layout="row")
+                    md-input-container(flex)
+                        label Nombre del proyecto
+                        input(ng-model="proyecto.nombre")
+                div(layout="row" layout-align="center center" flex)
+                    md-input-container(flex)
+                        label Areas
+                        md-select(ng-model="proyecto.area_actual")
+                            md-option(ng-value="area.id" ng-repeat="area in areas") {{area.nombre}}
+                    md-input-container(flex)
+                        label Programas
+                        md-select(ng-model="proyecto.campana_actual")
+                            md-option(ng-value="campana.id" ng-repeat="campana in campanas") {{campana.nombre}}    
+                md-input-container(flex)
+                    label Descripcion
+                    textarea(ng-model="proyecto.descripcion" md-maxlength="150" rows="5")
+            md-divider
+            md-subheader Información relacionada con el status
+            .md-padding
+                .pendiente(layout="column" flex ng-if="proyecto.status_actual === 1")
+                    md-input-container(flex)
+                        md-icon dns 
+                        label Objetivos
+                        input(ng-model="proyecto.Status.Pendiente.objetivos")
+                    md-input-container(flex)
+                        md-icon flag
+                        label Tareas
+                        input(ng-model="proyecto.Status.Pendiente.tareas")
+                .progreso(flex ng-if="proyecto.status_actual === 2")
+                    md-input-container(flex)
+                        md-icon work
+                        label Reporte de Avances
+                        input(ng-model="proyecto.Status.Progreso.reportes_avance")
+                    md-input-container(flex)
+                        md-icon date
+                        label Fecha
+                        md-datepicker(ng-model="proyecto.Status.Progreso.fechas_avance")
+                .terminado(flex ng-if="proyecto.status_actual === 3")
+                    md-input-container(flex)
+                        md-icon assignment_turned_in
+                        label Resultados
+                        input(ng-model="proyecto.Status.Terminado.resultados")
+                    md-input-container
+                        md-icon alarm
+                        label Duracion del proyecto
+                        input(ng-model="proyecto.Status.Terminado.duracion")
+            md-button(type="submit" md-colors="{background: 'green'}")
+                    md-icon save

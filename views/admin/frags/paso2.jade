@@ -1,0 +1,120 @@
+md-card
+    md-toolbar
+        .md-toolbar-tools
+            md-icon calendar
+            h1 Agregar un nuevo evento
+            span(flex)
+            md-button(ng-click="AbrirEvento()"  ng-if="!formularioEvento")
+                md-icon add
+            md-button(ng-if="formularioEvento" ng-click="CerrarEvento()")
+                md-icon clear
+    md-card-content
+            md-card-content
+                form(ng-if="formularioEvento" ng-submit="AgregarEvento(nuevoevento, proyectoCreado)" layout="row")
+                    md-input-container(flex)
+                        label Nombre
+                        input(ng-model="nuevoevento.nombre")
+                    md-input-container(flex)
+                        label Descripcion
+                        input(ng-model="nuevoevento.descripcion")
+                    md-input-container(flex)
+                        label Fecha de inicio
+                        md-datepicker(ng-model="nuevoevento.fecha")
+                    md-button(type="submit" md-colors="{background : 'green'}" )
+                        md-icon save
+            md-list
+                md-list-item.md-2-line(ng-repeat="evento in eventos")
+                    .md-list-item-text
+                        h2 {{evento.nombre}}
+                        p {{evento.descripcion}}
+                    .md-secondary
+                        p {{evento.fecha}}
+    md-toolbar
+        .md-toolbar-tools
+            h1 Agregar Centros de Acopio 
+            span(flex)
+            md-button(ng-click="AbrirUbicacion()" ng-if="!formularioUbicacion")
+                md-icon add
+            md-button(ng-if="formularioUbicacion" ng-click="CerrarUbicacion()")
+                md-icon clear
+    md-card-content
+        md-card-content
+            form(ng-if="formularioUbicacion" ng-submit="nuevaUbicacion(ubicacion)" layout="column")
+                md-input-container(flex)
+                    label Nombre
+                    input(ng-model="ubicacion.nombre")
+                md-input-container(flex)
+                    label Dirección
+                    input(ng-model="ubicacion.direccion")
+                div(layout="row" flex)
+                    md-input-container(flex)
+                        label Latitud
+                        input(ng-model="ubicacion.latitud")
+                    md-input-container(flex)
+                        label Altitud
+                        input(ng-model="ubicacion.altitud")
+                div(layout="row" flex)
+                    md-input-container(flex)
+                        label Horario de Apertura
+                        input(ng-model="ubicacion.apertura")
+                    md-input-container(flex)
+                        label Horario de Cierre
+                        input(ng-model="ubicacion.cierre")
+                    md-input-container(flex)
+                        label Periodo
+                        md-datepicker(ng-model="ubicacion.periodo" md-hide-icons="triangle")
+                md-button(type="submit" md-colors="{background: 'green'}")
+                    md-icon save
+                    
+        md-list
+            md-list-item.md-2-line(ng-repeat="ubicacion in ubicaciones")
+                .md-list-item-text
+                    h2 {{ubicacion.nombre}}
+                    p {{ubicacion.direccion}}
+        
+    md-toolbar
+        .md-toolbar-tools
+            h1 Agregar Materiales al Proyecto
+            span(flex)
+            md-button(ng-click="Abrir()" ng-if="!formularioMaterial")
+                md-icon add
+            md-button(ng-if="formularioMaterial" ng-click="Cerrar()")
+                md-icon clear
+    md-card-content
+        md-card-content
+            form(ng-if="formularioMaterial" ng-submit="AgregarMaterial(material, proyectoCreado)" layout="row")
+                md-input-container(flex)
+                    label Nombre
+                    input(ng-model="material.nombre")
+                md-input-container(flex)
+                    label Cantidad
+                    input(ng-model="material.cantidad")
+                md-input-container(flex)
+                    label Tipo 
+                    input(ng-model="material.tipo")
+                md-button(type="submit" md-colors="{background : 'green'}" )
+                    md-icon save
+        md-list
+            md-list-item.md-2-line(ng-repeat="material in materiales")
+                .md-list-item-text
+                    h2 {{material.nombre}}
+                    p {{material.cantidad}}
+                .md-secondary
+                    p {{material.tipo}}
+        
+                        
+     md-toolbar
+         .md-toolbar-tools
+             h1 Agregar Imagenes
+             span(flex)
+     md-card-content
+        md-grid-list(md-cols="4" md-row-height="200px")
+            md-grid-tile(md-colspan="2" md-rowspan="2")
+                .md-padding(flex="85" ng-init="Dropify()")
+                    form(ng-submit="agregarGrid(foto, proyectoCreado)" layout-fill)
+                        input.dropify(type="file" data-default-file="Imagen del producto" ng-model="foto" base-sixty-four-input maxsize="5120" data-max-file-size="1000K" accept="image/*" style="padding:0px;")
+                        md-button(md-colors="{background: 'blue'}" type="submit")
+                            md-icon keyboard_tab
+            md-grid-tile(md-colspan="1" md-rowspan="1" ng-repeat="imagen in imagenes" style="background-image:url({{imagen.imagen}})")
+                md-button(ng-click="quitarGrid($index, imagen.id)")
+                    md-icon clear

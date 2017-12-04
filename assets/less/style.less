@@ -1,0 +1,157 @@
+//nav
+header {
+    height: 100px;
+    .menu {
+        display: inline-flex;
+        .navbutton {
+            padding: 12px;
+        }
+    }
+}
+
+md-grid-tile{
+    background-size: cover;
+    background-position: center;
+    }
+
+.centro{
+    min-height: ~"calc(100vh - 150px)";
+}
+
+footer{
+    height: 50px;
+    .starbrand{
+        color: white;
+        display: inline-flex;
+        md-icon{
+            width: 100px;
+        }
+    }
+}
+
+//Slider
+.slider {
+    position: relative;
+    margin: auto;
+    min-width: 100%;
+    min-height: 100%;
+    overflow: hidden;
+    background-color: black;
+    .slide {
+        position: absolute;
+        left: 0px;
+        width: 100%;
+        img {
+            width: 100%;
+        }
+    }
+}
+
+.page.ng-enter {
+    .animation(@animation: bounceInUp);
+}
+
+.page.ng-leave {
+    .animation(@animation: bounceOutDown);
+}
+
+.ng-hide-add.ng-hide-add-active {
+    .animation(@animation: fadeOut);
+}
+
+.ng-hide-remove.ng-hide-remove-active {
+    .animation(@animation: fadeIn);
+}
+
+.animation(@animation;
+@duration: 1s) {
+    -webkit-animation: @animation 1000ms cubic-bezier(0.445, 0.050, 0.550, 0.950);
+    animation: @animation 1000ms cubic-bezier(0.445, 0.050, 0.550, 0.950);
+    -webkit-transition: all @duration ease-in-out;
+    -moz-transition: all @duration ease-in-out;
+    -o-transition: all @duration ease-in-out;
+    transition: all @duration ease-in-out;
+}
+
+.react{
+    md-content{
+        height: 100%;
+    }
+}
+
+#container {
+	width: 100vw;
+	height: 100vh;
+}
+
+.test{
+    width: 100%;
+    height: 70%;
+    .circle{
+        width: 100px;
+        height: 100px;
+        top: 35vh;
+        background: red;
+        position: relative;
+        margin: auto;
+    }
+}
+
+.main-button {
+	position: absolute;
+	width: 90px;
+	height: 90px;
+	border-radius: 100%;
+	background-color: #68AEF0;
+	cursor: pointer;
+	display: flex;
+	justify-content : center;
+	align-items: center;
+	color: #ffffff;
+	font-weight: lighter;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.child-button {
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 50px;
+	height: 50px;
+	border-radius: 100%;
+	background-color: white;
+	box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 3px;
+	color: #8898A5;
+}
+
+.proyectos{
+    md-card{
+        height: 100px;
+    }
+}
+
+//estilo para el tamño de las imagenes redondas
+.circle{
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+    border-radius: 60px;
+    img{
+        width: 60px;
+        height: 60px;
+    }
+
+}
+
+.nuevoproyecto{
+    .informacionbasica{
+        height: 170px;
+        .selects{
+            display: flex;
+            md-input-container{
+                width: 100%;
+            }
+        }
+    }
+}

@@ -1,0 +1,100 @@
+md-dialog.nuevacampana {
+  width: 60vw;
+}
+md-sidenav md-icon {
+  margin: auto 20px !important;
+}
+.md-input[disabled] {
+  margin: 10px;
+  padding: 0 30px;
+  font-size: 40px;
+  height: 50px;
+  background-image: none !important;
+  color: #000 !important;
+  transition: all 1s ease-in-out;
+}
+.md-input {
+  transition: all 1s ease-in-out;
+}
+.angular-google-map-container {
+  height: 100%;
+}
+.proyecto .navegador {
+  display: flex;
+}
+.proyecto .navegador .navegador-container {
+  margin: auto;
+  width: 100px;
+}
+.proyecto .navegador .navegador-container md-card {
+  margin: auto;
+  margin-top: 50px;
+  width: 100px;
+  background: #f7d64c;
+}
+.proyecto .navegador .navegador-container md-card .md-button {
+  margin: 0px;
+  height: 50px;
+  display: flex;
+}
+.proyecto .navegador .navegador-container md-card .md-button md-icon {
+  margin: auto;
+}
+.proyecto .navegador .navegador-container md-card .md-button.active {
+  background: #fff;
+}
+.proyecto section .titulo {
+  display: flex;
+}
+.proyecto section .titulo md-icon.icon {
+  margin: auto 20px;
+  color: #f7d64c;
+}
+.proyecto section .titulo .md-button {
+  float: right;
+  margin: auto 20px;
+  height: 20px;
+}
+.proyecto section .creacion form {
+  margin: 0px;
+}
+.proyecto section .creacion form .creacion-content {
+  padding: 20px;
+}
+.proyecto section .creacion form .creacion-content .creacion-row {
+  margin: 20px 0;
+}
+.proyecto section .creacion form .creacion-content md-input-container {
+  overflow: hidden;
+  margin: 0px;
+}
+.proyecto section .creacion form .creacion-content.textarea .md-errors-spacer {
+  position: initial;
+}
+.proyecto section .creacion form .md-button {
+  height: 20px;
+}
+.proyecto section.info form {
+  margin: 0px;
+}
+.proyecto section.info form .md-button {
+  margin: 0px;
+  border-radius: 0px;
+}
+.imagenes md-grid-list md-grid-tile {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.imagenes .grid-content {
+  width: 100%;
+}
+.imagenes .grid-content form {
+  width: 100%;
+  margin: 0px;
+  height: calc(100% - 48px) !important;
+}
+.imagenes .grid-content form .dropify-wrapper {
+  padding: 0px;
+  margin: 0px;
+}

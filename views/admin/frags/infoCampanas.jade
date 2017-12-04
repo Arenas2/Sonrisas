@@ -1,0 +1,35 @@
+.editarcampana
+    md-card
+        md-toolbar
+            .md-toolbar-tools
+                h4 Editar Programa
+                span(flex)
+                md-button(md-colors="{background: 'red'}" ng-click="eliminarCampana(id)")
+                    md-icon clear
+        form(ng-submit="editarCampana(campanas)" layout="column")
+            .image-container(flex="50" ng-init="Dropify()")
+                .dropify-container(ng-init="Dropify()" flex ng-hide="inputImage")
+                    input.dropify(type="file" data-default-file="Imagen de la campanas" ng-model="campanas.logo" base-sixty-four-input maxsize="5120" data-max-file-size="1000K" accept="image/*" style="padding:0px;")
+                .croppie-container(flex ng-show="inputImage")
+                    ng-croppie(src="inputImage"
+                        ng-model='campanas.logo'
+                        update='onUpdate'
+                        boundry="{ w: 300, h: 300 }"
+                        viewport="{ w: 200, h: 200 }"
+                        mousezoom="true" 
+                        zoom="true" 
+                        orientation="90"
+                        type="square")  
+
+            md-input-container(flex)
+                label Cambiar Nombre
+                input(ng-model="campanas.nombre" )
+            md-input-container(flex)
+                label Cambiar Descripcion
+                input(ng-model="campanas.descripcion")
+            md-input-container(flex)
+                label Cambiar Fecha
+                md-datepicker(ng-model="campanas.fecha")
+            md-button(type="submit"  md-colors="{background: 'green'}")
+                md-icon save
+            

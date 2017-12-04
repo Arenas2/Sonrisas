@@ -1,0 +1,18 @@
+.editarareas
+    md-card
+        md-toolbar
+            .md-toolbar-tools
+                h4 Editar Areas
+                span(flex)
+                md-button(ng-click="editar = !editar")
+                    md-icon edit
+                md-button(md-colors="{background: 'red'}" ng-click="eliminarArea(id)")
+                    md-icon clear
+        form(ng-submit="editarArea(areas)" layout="column")
+            md-input-container(flex)
+                label Cambiar Nombre
+                input(ng-model="areas.nombre" ng-disabled="!editar")
+            md-button(type="submit" ng-if="editar" md-colors="{background: 'green'}")
+                md-icon save
+            
+    

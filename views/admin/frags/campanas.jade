@@ -1,0 +1,28 @@
+.camapanas(ng-init="obtenerCampanas()")
+    md-card
+        md-card-content(layout="row")
+            md-autocomplete(
+            md-selected-item="ctrl.selectedCampana" 
+            md-search-text-change="ctrl.BuscarCampanaChange(ctrl.searchTextCampana)" 
+            md-search-text="ctrl.searchTextCampana" 
+            md-selected-item-change="ctrl.CampanaSeleccionadoChange(item)" 
+            md-items="item in campanas" 
+            md-item-text="item.nombre" 
+            md-min-length="0" 
+            placeholder="Nombre del Programa" 
+            md-menu-class="autocomplete-custom-template"
+            flex)
+                md-item-template
+                    span {{item.nombre}}
+            md-button(md-colors="{background: 'green'}" ng-click="CampanaDialog()")
+                md-icon add
+    md-card
+        md-toolbar
+            .md-toolbar-tools
+                h4 Lista de Programas
+        md-card-content
+            md-list
+                md-list-item.md-2-line(ng-repeat="campana in campanas | filter: ctrl.searchTextCampana" ui-sref="campana({idCampana:campana.id})")
+                    img.md-avatar(ng-src="{{campana.logo}}")
+                    .md-list-item-text
+                        h1 {{campana.nombre}}

@@ -1,0 +1,18 @@
+md-toolbar(ng-init="sectionsMenu('user')")
+	.md-toolbar-tools(layout="row" layout-align="space-around center")
+		span(flex)
+		p Bienvenido Ulises Gonzalez
+		div(flex layout="row" layout-align="end center")
+			md-button(ui-sref="public.home")
+				md-icon.material-icons exit_to_app
+div(layout="row")
+	div(flex="20")
+		md-sidenav(md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')" style="height:100%")
+			md-content
+				ul
+					li(ng-repeat="section in ctrl.menu.sections")
+						h2(ng-if="section.type === 'heading'" id="heading_{{ section.name}}")
+						menu-link(section="section" ng-if="section.type === 'link'")
+						menu-toggle(section="section" ng-if="section.type === 'toggle'")
+	div(flex="80")
+		main(ui-view="main" class="page")

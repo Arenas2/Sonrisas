@@ -1,0 +1,493 @@
+AmarilloObscuro = #f7d64c
+AmarilloClaro = #f8de74
+verdeObscuro = #3da94c
+verdeClaro = #73b86a
+rojoObscuro = #d42231
+rojoClaro = #dd554f
+naranjaObscuro = #dc6837
+naranjaClaro = #e58558
+azulObscuro = #2b92c1
+azulClaro = #68a4ce
+gris = #353535
+
+a = AmarilloObscuro
+b = azulClaro
+
+.main, footer
+    position: relative;
+    z-index: 2;
+
+md-progress-circular
+    path
+        stroke AmarilloObscuro
+
+transition(duration, delay)
+    -webkit-transition: all duration cubic-bezier(0.445, 0.050, 0.550, 0.950);
+    transition: all duration cubic-bezier(0.445, 0.050, 0.550, 0.950);
+    -webkit-transition-delay: delay;
+    transition-delay: delay;
+
+.angular-google-map-container
+	height 100%
+
+.green
+    background-color verdeClaro
+
+.red
+    background-color red
+
+.loader
+    min-height calc(100vh - 100px)
+    width 100%
+    display flex
+    md-progress-circular
+        margin auto
+
+@font-face {
+    font-family Baloo
+    src url('/fonts/Baloo-Regular.ttf')
+}
+
+*
+    font-family Baloo
+
+p, span
+    font-family Arial
+    font-size 12px
+
+h4
+    color gris
+
+.centro
+    margin-top 100px
+    min-height calc(100vh)
+
+
+.ngi-inspector
+    color: black;
+    font-family Arial
+
+.sebutton
+    border 1px solid white
+
+html, body
+    color white !important;
+    .nosotros
+        border 1px solid white
+    .unete
+        border 1px solid white
+        float right
+        width 300px
+        padding 4% 15%
+
+header
+    height 50px
+    width 100%
+    padding 0 50px !important
+    color gris
+    background:rgba(255,255,255,0.8);
+    position fixed
+    z-index 3
+    .menu
+        width 100%
+        .logo-container
+            h2
+                margin auto 20px
+            .logo
+                cursor pointer
+                height 40px
+                width 40px
+                background-color white
+                display flex
+                border-radius 100px
+                md-icon
+                    height: 30px
+                    width: 30px
+        .md-nav-bar
+            height 50px
+            border-radius 0px
+            .md-nav-item
+                margin 0 40px
+                span
+                    font-size 14px !important
+        .profilebuttons
+            display inline-block
+            .md-button
+                float right
+                border 1px solid white
+            .auth
+                h2
+                    margin auto 0
+                .perfil, .logout
+                    width 50px
+                    min-width 50px
+        .md-button
+            font-size 24px
+            color gris !important
+
+
+body
+    background: inherit
+
+footer
+    position fixed
+    bottom 0px
+    width 100%
+    height 35px
+    .starbrand
+        display flex
+        color white
+        md-icon
+            width 100px
+    .md-button
+        border-radius 0px
+        color white
+
+
+
+
+@-webkit-keyframes rainbow
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+
+@-moz-keyframes rainbow
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+
+@-o-keyframes rainbow
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+
+@keyframes rainbow
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+
+
+.home
+    .konva
+        top 0
+        position fixed
+        z-index -1
+        background-color AmarilloObscuro
+        canvas
+            z-index 1
+            width 1800% 1800%;
+            // -webkit-animation rainbow 18s ease infinite
+            // -z-animation rainbow 18s ease infinite
+            // -o-animation rainbow 18s ease infinite
+            // animation rainbow 18s ease infinite
+
+
+    .home-container
+        .right
+            min-height calc(100vh - 250px)
+            display flex
+            .right-content
+                margin auto
+            .anecdotas
+                margin-bottom 100px
+
+
+        .left
+            min-height calc(100vh - 250px)
+            display flex
+            .left-container
+                position absolute !important
+            .left-content
+                margin auto
+
+.proyecto
+    section
+        margin-top 100px
+    .titulo
+        display flex
+        margin 20px 0
+        md-icon
+            width 150px
+            height 50px
+            margin auto 0px
+        h2
+            color gris
+    .left
+        .md-padding
+            padding-top 0px
+            .portada
+                background-size cover
+                background-position center center
+                background-repeat no-repeat
+        h2
+            margin 0
+            height 30px
+    .right
+        .comparte
+            p
+                border-radius 3px
+                text-align center
+                margin 0px
+                color gris
+            display inline-block
+            .md-button
+                margin 0px
+                background-color #475993
+                width 100%
+                md-icon
+                    margin auto 20px
+
+    .title
+        display inline-flex
+        margin 20px 0
+        .title-content
+            display inline-block
+            h2
+                margin 0px
+                color gris
+            p
+                color gris
+                margin 0
+
+        md-icon
+            margin auto 20px
+            color AmarilloObscuro
+    h4
+        margin 0px
+
+    .evento, .materiales
+        margin 25 0
+
+    md-list
+        padding 0
+        md-list-item
+            background rgba(255,255,255,0.2)
+            height 20px
+            min-height 35px
+            margin 5 0
+            md-progress-linear
+                transform rotate(180deg)
+                position absolute
+                z-index 1
+                height 100%
+                background-color inherit
+                .md-container
+                    height 100%
+                    background-color inherit
+                    .md-bar2
+                        background-color AmarilloClaro
+                        height 100%
+            p
+                margin auto 20
+            .cantidad,.fecha
+                min-width 50px
+                text-align right
+                color gris
+                z-index 2
+            md-card
+                background-color AmarilloObscuro
+                z-index 2
+            .md-secondary-container
+                padding 0px
+                z-index 2
+                .md-button
+                    background-color white
+                    color black
+    .fotos
+        width 100%
+        margin-bottom 100px
+        md-grid-list
+            md-grid-tile
+                background-size cover
+                background-position center center
+                background-repeat no-repeat
+
+    .anecdotas
+        .anecdotas-content
+            margin 50px 0
+            md-list
+                md-list-item
+                    min-height 60px !important
+                    img
+                        margin auto 20px
+		.comentarios
+    		form
+                .comentario
+                    padding 20px
+                margin 0
+                .md-avatar
+                    height 40px
+                    width 40px
+                    margin auto 20px
+                    border-radius 50%
+                md-input-container
+                    margin-top 20px
+                    margin 0px
+                    width 100% !important
+                .opciones
+                    .md-button
+                        margin 0px
+
+    .proyectosterminados
+        margin-top -100px
+        .portadafull
+            height 100vh
+            width 100%
+            background-size cover
+            background-position center center
+            background-repeat no-repeat
+            .titulo
+                width 100%
+                margin 0px !important
+                background rgba(255,255,255,0.8)
+                height 10vh !important
+                display flex
+                h2
+                    font-size 24px
+                    margin auto 30px
+        .terminado-content
+            margin-top 10vh
+
+.proyectos
+    .proyectos-container
+        md-card
+        .pendientes, .progresos, .terminados
+            margin-top 2vh
+        .vista1
+            margin-bottom 15vh
+            .titulo
+                margin 20px 0
+                width 100%
+                display flex
+                md-icon
+                    width 74px
+                    height 26px
+                    margin auto 20px
+                h4
+                    margin 10px 0;
+                margin-bottom 10px
+            md-card
+                width 100%
+                margin 0px
+                md-grid-list
+                    md-grid-tile
+                        background-position center center
+                        background-size cover
+                        background-repeat no-repeat
+                        transition 300ms 0ms
+                        &.conHover
+                            cursor pointer
+                            z-index 99
+                            transform scale(1.1)
+                            border-radius 3px
+                        md-grid-tile-footer
+                            h4
+                                color white
+            .md-button
+                background rgba(255,255,255,0.2)
+                width 30px
+                min-width 30px
+                margin 0
+                md-icon
+                    width 20px
+                    height 20px
+                    margin 0px
+                    color AmarilloObscuro
+                    transform scale(2)
+            // .paginacion
+            //     height 30px
+
+
+.loginyregistro
+    width 100%
+    height 100%
+    display flex
+    md-card
+        md-toolbar
+            background-color rgba(255, 255, 255, 0)
+            .md-toolbar-tools
+                padding 0px
+                .md-button
+                    background-color rgba(255, 255, 255, 0)
+                    width 20px !important
+                    border-right 1px solid rgba(0, 0, 0, 0.12)
+                    margin 0px
+                    padding 0px
+                    margin-right 20px
+        form
+            margin-bottom 0px
+        width 30vw
+        margin auto
+        .md-button
+            &.fb
+                background-color #475993
+            &.ok
+                background-color verdeClaro
+            min-height 60px
+            background-color AmarilloObscuro
+            padding 0px
+            border-radius 0px
+            width 100% !important
+            margin 0px
+            display flex
+            .md-button-content
+                margin auto
+                display flex
+                md-icon
+                    margin auto 10px
+
+md-dialog.login
+    min-width 30vw
+    width 30vw !important
+    .botones
+        .md-button
+            display flex !important
+            md-icon
+                margin auto
+        .botones-registro
+            width 100%
+            .md-button
+                width 100% !important
+
+md-dialog
+    width 50vw
+    form
+        margin-botton 0
+
+md-dialog.accion
+    .titulo
+        text-align center
+    form
+        margin-bottom 0px
+        .md-button
+            margin 0px
+            border-radius 0px
+
+
+
+animation(animation)
+    -webkit-animation animation 1000ms cubic-bezier(0.445, 0.050, 0.550, 0.950)
+    animation animation 1000ms cubic-bezier(0.445, 0.050, 0.550, 0.950)
+    -webkit-transition all 1s ease-in-out
+    -moz-transition all 1s ease-in-out
+    -o-transition all 1s ease-in-out
+    transition all 1s ease-in-out
+
+.ng-hide-add.ng-hide-add-active
+    animation fadeOut
+
+
+.ng-hide-remove.ng-hide-remove-active
+    animation fadeIn
+
+main
+    &.ng-enter
+        animation bounceInUp
+    &.ng-leave
+        animation bounceOutDown
+
+.left-container
+    &.ng-enter
+        animation fadeInLeft
+    &.ng-leave
+        animation fadeOutRight

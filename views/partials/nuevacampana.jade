@@ -1,0 +1,22 @@
+md-dialog.nuevacampana
+    md-toolbar
+        .md-toolbar-tools
+            h4 Nuevo Programa
+    form.md-padding(ng-submit="nuevaCampana(campana)" layout="column")
+        .div(flex layout="row" layout-align="center center")
+            md-input-container(flex)
+                label Nombre
+                input(ng-model="campana.nombre")
+            md-input-container
+                label Fecha
+                md-datepicker(ng-model="campana.fecha")
+        div(layout="row")
+            div(flex="50" layout="column")
+                md-input-container(flex)
+                    label Descripcion
+                    input(ng-model="campana.descripcion")
+            .md-padding(flex ng-init="Dropify()")
+                input.dropify(ng-model="campana.foto" base-sixty-four-input type="file" data-default-file="Imagen del programa" maxsize="5120" data-max-file-size="1000K" accept="image/*" style="padding:0px;")
+        md-button(type="submit" md-colors="{color:'default-green'}")
+            md-icon add
+    

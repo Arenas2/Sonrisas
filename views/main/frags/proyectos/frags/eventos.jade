@@ -1,0 +1,15 @@
+.eventos
+	.title
+		md-icon date_range
+		.title-content
+			h2 Eventos
+			p Participa en algunos de los eventos.
+	md-list
+		md-progress-linear(md-mode="indeterminate" ng-if="!eventos"  ng-disabled="eventos")
+		md-list-item(ng-repeat="evento in eventos" ng-click="inscribirseEvento(evento, ev)")
+			.fecha {{evento.fecha | date:'dd-MM-yyyy'}}
+			md-card(md-whiteframe="1").md-list-item
+				p {{evento.nombre}}
+			.md-secondary
+				.usuario(layout="row")
+					img(ng-src="{{usuario.fb_avatar}}" ng-repeat="usuario in evento.Usuario")
